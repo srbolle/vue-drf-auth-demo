@@ -13,7 +13,9 @@ cd backend
 python3 -m virtualenv ./env
 source ./env/bin/activate
 
-# Note: 2 different requirements-files.
+Note: 2 different requirements-files, we are using requirements.txt.original
+for now.
+
 pip install -r requirements.txt.original
 python manage.py migrate
 python manage.py createsuperuser
