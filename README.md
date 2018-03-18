@@ -1,6 +1,10 @@
-======================
 vue-drf-auth-demo
 ======================
+
+This project demonstrates the use of vue with the django-rest-framework and
+authorization.
+
+More information on how to set up and use this project will follow shortly.
 
 Helpful info
 ============
