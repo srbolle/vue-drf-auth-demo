@@ -4,7 +4,27 @@ vue-drf-auth-demo
 This project demonstrates the use of vue with the django-rest-framework and
 authorization.
 
-More information on how to set up and use this project will follow shortly.
+More information on how to set up and use this project will be added shortly.
+
+Installation and setup of Django backend
+----------------------------------------
+
+cd backend
+python3 -m virtualenv ./env
+source ./env/bin/activate
+
+# Note: 2 different requirements-files.
+pip install -r requirements.txt.original
+python manage.py migrate
+python manage.py createsuperuser
+
+python manage.py runserver 0.0.0.0:8000
+
+
+Installation and setup of vue frontend with npm
+-----------------------------------------------
+
+cd ../frontend
 
 Helpful info
 ============

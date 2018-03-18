@@ -2,4 +2,6 @@ Django==1.11.8
 Markdown==2.6.10
 django-filter==1.1.0
 djangorestframework==3.7.7
+djangorestframework-jwt==1.11.0
+django-cors-headers==2.1.0
 pytz==2017.3
