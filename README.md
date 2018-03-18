@@ -34,6 +34,8 @@ Installation and setup of vue frontend with npm
 cd ../frontend
 ```
 
+INCOMPLETE: more information will be added shortly!
+
 Helpful info
 ============
 
