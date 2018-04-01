@@ -2,9 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <p>
-    <router-link to="/">Login</router-link>
-    <router-link to="/users">Users</router-link>
-    <router-link to="/original">Help</router-link>
+    <app-nav></app-nav>
     </p>
     <router-view/>
     <hr/>
@@ -13,12 +11,12 @@
 </template>
 
 <script>
-import UserLogin from './components/login'
+import AppNav from './components/AppNav'
 
 export default {
   name: 'app',
   components: {
-    UserLogin
+    AppNav
   }
 }
 </script>
