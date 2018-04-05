@@ -7,6 +7,7 @@
       <div v-show="isLoggedIn()">
         <router-link to="/users">Users</router-link>
         <router-link to="/jwt">Show JWT</router-link>
+        <button v-on:click="handleLogout">Logout</button>
       </div>
       <router-link to="/original">Help</router-link>
     </div>
@@ -25,6 +26,7 @@ export default {
     },
     handleLogout () {
       logout()
+      this.$router.push('/')
     },
     isLoggedIn () {
       return isLoggedIn()

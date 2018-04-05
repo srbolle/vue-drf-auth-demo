@@ -33,7 +33,6 @@ var router = new Router({
 });
 
 export function logout() {
-  clearIdToken();
   clearAccessToken();
   router.go('/');
 }
