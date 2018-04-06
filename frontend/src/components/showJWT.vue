@@ -1,62 +1,49 @@
 <template>
 <div>
-  <div id="jwt">
+  <div class="loading" v-if="loading">
+    Loading...
+  </div>
+
+  <div v-if="error" class="test_error">
+    <p>
+    Error!!!
+    </p>
+    {{ error }}
+  </div>
+
+  <div class="jwt">
     <h3 class="text-center" v-bind:title="user_jwt">Show JWT</h3>
     <p><span class="badge alert-info"> JWT: </span> {{ user_jwt }} </p>
   </div>
-  <div id="user-credentials">
-    <button v-on:click="handleLogin">Login</button>
-    <button v-on:click="handleLogout">Logout</button>
-    <h5>Usercredentials:</h5>
-    <input v-model="user" placeholder="Username">
-    <input v-model="password" placeholder="Password">
-  </div>
-  <router-link to="/users">Go to Users</router-link>
-  <!--
-  <list-users></list-users>
-  -->
 </div>
 </template>
 
 <script>
-import ListUsers from './listUsers'
-import { login, logout, getAccessToken } from '../../utils/auth'
-
-function sleep (ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
+import { getAccessToken } from '../../utils/auth'
 
 export default {
   name: 'jwt_token',
   components: {
-    ListUsers
-  },
-  methods: {
-    handleLogin () {
-      login(this.user, this.password)
-      sleep(250).then(() => {
-        this.user_jwt = getAccessToken()
-        console.log('jwt: ', this.user_jwt)
-      })
-    },
-    handleLogout () {
-      logout()
-    }
   },
   data () {
     return {
-      user_jwt: '',
-      user: '',
-      password: '',
-      just_testing: ' a test ',
-      timer: ''
+      loading: false,
+      user_jwt: null,
+      error: null
     }
   },
+  methods: {
+    getToken () {
+      this.user_jwt = getAccessToken()
+    }
+
+  },
+  watch: {
+    // call again the method if the route changes
+    '$route': 'getToken'
+  },
   created () {
-  },
-  mounted () {
-  },
-  updated () {
+    this.getToken()
   }
 }
 </script>
