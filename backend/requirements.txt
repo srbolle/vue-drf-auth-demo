@@ -1,7 +1,7 @@
 Django==1.11.8
 Markdown==2.6.10
 PyJWT==1.5.3
-Pygments==2.2.0
+Pygments==2.7.4
 certifi==2017.11.5
 chardet==3.0.4
 decorator==4.1.2
