@@ -2,7 +2,7 @@ Django==1.11.8
 Markdown==2.6.10
 PyJWT==1.5.3
 Pygments==2.2.0
-certifi==2017.11.5
+certifi==2022.12.7
 chardet==3.0.4
 decorator==4.1.2
 django-cors-headers==2.1.0
